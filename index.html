@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Flow | Proposal Tracker</title>
+        <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <section class="hero-section">
+    <nav>
+        <a href="#overview">Overview</a>
+        <a href="#opportunities">Opportunities</a>
+        <a href="#add-proposal">Add Proposal</a>
+        <a href="#reminders">Follow-ups</a>
+    </nav>
+    <div class="hero-art-wrap">
+        <img src="image.png" alt="Illustration of a freelancer managing proposals on a laptop">
+        <a class="hero-start-button" href="#overview">Get Started &rarr;</a>
+    </div>
+</section>
+
+
+        <section id="overview" class="stats">
+            <article class="stat-card">
+                <p>Total Opportunities</p>
+                <h3 id="totalCount">0</h3>
+            </article>
+            <article class="stat-card">
+                <p>Proposals Sent</p>
+                <h3 id="sentCount">0</h3>
+            </article>
+            <article class="stat-card">
+                <p>Won Projects</p>
+                <h3 id="wonCount">0</h3>
+            </article>
+            <article class="stat-card">
+                <p>Estimated Value</p>
+                <h3 id="valueCount">₹ 0</h3>
+            </article>
+        </section>
+
+        <div class="content-grid">
+            <section id="opportunities" class="panel">
+                <h2>Opportunity Tracker</h2>
+                <p>View and manage all your freelance proposals in one place.</p>
+
+                <div class="toolbar">
+                    <input type="text" id="searchText" placeholder="Search client or project...">
+                    <select id="statusFilter">
+                        <option value="All">All statuses</option>
+                        <option value="Draft">Draft</option>
+                        <option value="Sent">Sent</option>
+                        <option value="Follow-up">Follow-up</option>
+                        <option value="Won">Won</option>
+                        <option value="Lost">Lost</option>
+                    </select>
+                    <button onclick="searchProposals()">Search</button>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <caption>YOUR PROPOSALS</caption>
+                        <thead>
+                            <tr>
+                                <th>Project / Client</th>
+                                <th>Deadline</th>
+                                <th>Value</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="proposalRows"></tbody>
+                    </table>
+                </div>
+                <p id="resultMessage"></p>
+            </section>
+
+            <aside>
+                <section id="add-proposal" class="panel">
+                    <h2>Add New Opportunity</h2>
+                    <p>Enter the details of a new freelance proposal.</p>
+
+                    <form onsubmit="return false;">
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="projectName">Project name</label>
+                                <input type="text" id="projectName" placeholder="Website redesign" required>
+                            </div>
+                            <div class="field">
+                                <label for="clientName">Client name</label>
+                                <input type="text" id="clientName" placeholder="Client / Company" required>
+                            </div>
+                            <div class="field">
+                                <label for="deadline">Deadline</label>
+                                <input type="date" id="deadline" required>
+                            </div>
+                            <div class="field">
+                                <label for="projectValue">Estimated value (₹)</label>
+                                <input type="number" id="projectValue" min="1" placeholder="25000" required>
+                            </div>
+                            <div class="field">
+                                <label for="proposalStatus">Proposal status</label>
+                                <select id="proposalStatus">
+                                    <option>Draft</option>
+                                    <option>Sent</option>
+                                    <option>Follow-up</option>
+                                    <option>Won</option>
+                                    <option>Lost</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="followDate">Follow-up date</label>
+                                <input type="date" id="followDate">
+                            </div>
+                            <div class="field full-field">
+                                <label for="proposalNotes">Notes</label>
+                                <textarea id="proposalNotes" placeholder="Add project details or next steps..."></textarea>
+                            </div>
+                        </div>
+                        <button class="form-button" onclick="addProposal()">Add Proposal</button>
+                    </form>
+                </section>
+
+                <section id="reminders" class="panel">
+                    <h2>Follow-up Reminders</h2>
+                    <p>Keep track of your next steps.</p>
+                    <div id="reminderList"></div>
+                </section>
+
+                <section class="panel">
+                    <h2>Quick Tip</h2>
+                    <div class="note-box">
+                        <strong>Stay consistent!</strong>
+                        <p>Send a polite follow-up after submitting a proposal. Keep your notes and deadlines updated to stay organised.</p>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Freelance Flow. Organise your work. Track your growth.</p>
+    </footer>
+
+        <script src="script.js" defer></script>
+
+</body>
+</html>
