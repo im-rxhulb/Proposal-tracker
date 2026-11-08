@@ -1,3 +1,4 @@
+
 * {
             box-sizing: border-box;
             margin: 0;
@@ -848,3 +849,39 @@
                 border-color: #174B42;
             }
         }
+
+
+/* Expandable notes shown underneath each opportunity (no extra table column) */
+.notes-row td {
+    padding: 0 10px 12px;
+    border-bottom: 1px solid #D9E9DE;
+    background: #fff;
+}
+.proposal-notes {
+    font-size: 12px;
+    color: #386B5D;
+}
+.proposal-notes summary {
+    display: inline-block;
+    color: #176B5B;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 3px 0;
+    list-style-position: inside;
+}
+.proposal-notes summary:hover {
+    color: #104E43;
+    text-decoration: underline;
+}
+.proposal-notes p {
+    margin: 7px 0 2px;
+    padding: 10px 12px;
+    background: #F3F8F4;
+    border-left: 3px solid #238675;
+    border-radius: 5px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+    
